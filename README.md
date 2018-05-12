@@ -2,7 +2,7 @@
 
 Simple react app calling public api for lyrics
 
-![]("https://github.com/sophiechhoeu/LyricsFinder/blob/master/public/Lyrics.png")
+![](https://github.com/sophiechhoeu/LyricsFinder/blob/master/public/Lyrics.png)
 
-
-https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search?console=1
+## Lyric Api
+![Click here](https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search?console=1)
