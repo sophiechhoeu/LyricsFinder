@@ -24,7 +24,7 @@ class App extends Component {
  //   });
  // }
 
-  search(){
+  searchLyrics(){
     fetch(`https://api.lyrics.ovh/v1/${this.state.artist}/${this.state.title}`)
     .then(res =>res.json())
     .then((json) => {
@@ -41,23 +41,24 @@ class App extends Component {
       <div className="App">
         <h1>LyricFinder</h1>
        <div className="search-form">
-        <Form>
-          <FormGroup className="artist-search">
-            <Label id="artist" for="artist">Artist</Label>
-            <Input type="artist" name="artist" id="Artist" placeholder="Artist"
-              value={this.state.artist}
-              onChange={event => {this.setState({artist:event.target.value})}}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="title">Title</Label>
-            <Input type="title" name="title" id="Title" placeholder="Title" value={this.state.title}
-            onChange={event => {this.setState({title:event.target.value})}}/>
-          </FormGroup>
-        <Button onClick={() => this.search()}>Submit</Button>
-          </Form>
+          <Form>
+            <FormGroup className="artist-search">
+              <Label id="artist" for="artist">Song Artist</Label>
+              <Input type="artist" name="artist" id="artist-input" placeholder="Artist"
+                value={this.state.artist}
+                onChange={event => {this.setState({artist:event.target.value})}}/>
+            </FormGroup>
+            <FormGroup className="title-search">
+              <Label id="title" for="title">Song Title</Label>
+              <Input type="title" name="title" id="title-input" placeholder="Title" value={this.state.title}
+              onChange={event => {this.setState({title:event.target.value})}}/>
+            </FormGroup>
+            </Form>
+          <Button color="primary" onClick={() => this.searchLyrics()}>Submit</Button>
+        </div>
+          <div className="lyrics">
+            <span>{this.state.data}</span>
           </div>
-        <h2>{this.state.data}</h2>
-
       </div>
     );
   }
